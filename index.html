@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pestañas (Tabs) - Ejemplo</title>
+
+  <!-- Enlaza tu CSS (asegúrate de que styles.css esté en la misma carpeta) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Contenedor principal de las pestañas -->
+  <section class="tabs-wrapper" aria-label="Ejemplo de pestañas">
+    <!-- Barra de pestañas (role=tablist) -->
+    <div class="tabs" role="tablist" aria-label="Pestañas principales">
+      <!-- Cada botón actúa como una pestaña; data-tab referencia el id del panel -->
+      <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" data-tab="1">
+        First Tab
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" data-tab="2">
+        Second Tab
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" data-tab="3">
+        Third Tab
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4" data-tab="4">
+        Fourth Tab
+      </button>
+    </div>
+
+    <!-- Paneles de contenido; el primero está visible por defecto -->
+    <div class="panels">
+      <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+        <h3>First Tab content</h3>
+        <p>First Tab content to be displayed here.</p>
+      </div>
+
+      <div class="panel hidden" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <h3>Second Tab content</h3>
+        <p>Contenido de la segunda pestaña.</p>
+      </div>
+
+      <div class="panel hidden" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+        <h3>Third Tab content</h3>
+        <p>Contenido de la tercera pestaña.</p>
+      </div>
+
+      <div class="panel hidden" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+        <h3>Fourth Tab content</h3>
+        <p>Contenido de la cuarta pestaña.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enlaza tu JavaScript (asegúrate de que script.js esté en la misma carpeta) -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* Reset ligero para consistencia */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Contenedor general */
+.tabs-wrapper {
+  width: min(980px, 96%);     /* ancho máximo y responsivo */
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #999;
+  background: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Barra de pestañas */
+.tabs {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+/* Estilo base de cada tab (botón) */
+.tab {
+  background: none;
+  border: none;               /* sin bordes por defecto */
+  font-size: 15px;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #9a9a9a;             /* gris para inactivos */
+  position: relative;
+}
+
+/* Tab activo: texto negro y línea inferior */
+.tab.active {
+  color: #111;
+  font-weight: 600;
+}
+
+/* Línea inferior para tab activo (alternativa a border-bottom del botón) */
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  bottom: -12px;              /* se ve debajo de la barra */
+  background: #111;
+  border-radius: 2px;
+}
+
+/* Efecto hover */
+.tab:hover {
+  color: #333;
+}
+
+/* Área de paneles */
+.panels {
+  margin-top: 18px;
+}
+
+/* Panel (contenido) */
+.panel {
+  padding: 22px;
+  border-radius: 10px;
+  background: #0b0b0b;        /* ejemplo estilo oscuro como tu imagen */
+  color: #fff;
+  min-height: 120px;
+  display: block;             /* visible por defecto (si no tiene .hidden) */
+  box-shadow: 0 6px 0 rgba(0,0,0,0.05);
+}
+
+/* Panel oculto: use hidden attribute y clase hidden */
+.panel.hidden {
+  display: none;              /* oculta el panel */
+}
+
+/* Texto fuera del panel (ej. instrucción) */
+.tabs-wrapper p {
+  margin-top: 14px;
+  color: #333;
+}
